@@ -34,10 +34,9 @@ main {
     height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex: 1;
-    padding-top: 8%;
 }
 
 .container-lista {
@@ -45,6 +44,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 15%;
     gap: 40px;
 }
 
@@ -92,4 +92,11 @@ main {
     align-items: center;
     gap: 15px;
     border-radius: 16px;
+}
+
+/* Tela adicionar produto */
+
+.modal-adicioanr {
+    z-index: 100;
+    background-color: white;
 }
