@@ -1,6 +1,11 @@
 body {
     background-color: #1741C4;
     font-family: 'outfit';
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
 header {
@@ -11,7 +16,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 2% 30% 0% 30%;
-    color: white;
 }
 
 header h1 {
@@ -24,4 +28,68 @@ header h1 {
     padding: 8px 16px;
     border-radius: 16px;
     font-size: 20px;
+}
+
+main {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    padding-top: 8%;
+}
+
+.container-lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.lista h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.lista h3 {
+    font-size: 13.6px;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#btn-adicionar {
+    background-color: #FFD426;
+    padding: 8px 60px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 16px;
+    color: #1741C4;
+}
+
+#btn-editar {
+    background-color: #64AD36;
+    padding: 8px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 16px;
 }
