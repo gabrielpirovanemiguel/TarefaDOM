@@ -1,0 +1,27 @@
+body {
+    background-color: #1741C4;
+    font-family: 'outfit';
+}
+
+header {
+    min-height: 10vh;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 30% 0% 30%;
+    color: white;
+}
+
+header h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+#quantidade-itens {
+    background-color: #FFFFFF26;
+    padding: 8px 16px;
+    border-radius: 16px;
+    font-size: 20px;
+}
