@@ -1,5 +1,6 @@
 import  {ativarModalAdicionar,
-        desativarModalAdicionar
+        desativarModalAdicionar,
+        adicionarProduto
 } from "./funcoes.js";
 
 let botoesCancelar;
@@ -16,13 +17,6 @@ conteudoLista.addEventListener('click', function (event) {
 conteudoLista.addEventListener('submit', (event) => {
     if (event.target.classList.contains('form-adicionar')) {
         event.preventDefault();
-        let quantidadeProduto;
-        const nomeProduto = document.querySelector('#nome-produto').value;
-        const isQuantidade = document.querySelector('#quantidade-produto');
-        isQuantidade.value ? quantidadeProduto = isQuantidade.value : quantidadeProduto = 1;
-        compras.push({ 'nome': nomeProduto, 'quantidade': quantidadeProduto });
-        console.log(compras);
-        desativarModalAdicionar();
+        adicionarProduto(compras);
     }
-
 })
