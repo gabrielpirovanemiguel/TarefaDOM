@@ -48,6 +48,14 @@ main {
     gap: 40px;
 }
 
+.conteudo-lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
 .lista {
     display: flex;
     flex-direction: column;
@@ -95,6 +103,19 @@ main {
 }
 
 /* Tela adicionar produto */
+
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+
 
 .modal-adicionar {
     color: black;
