@@ -19,6 +19,7 @@ export function adicionarProduto(compras) {
     const quantidadeProduto = document.querySelector('#quantidade-produto').value;
     compras.push({ 'nome': nomeProduto, 'quantidade': quantidadeProduto });
     desativarModalAdicionar(compras);
+    mostrarContador(compras);
 }
 
 export function mostrarItens(compras) {
@@ -41,13 +42,17 @@ export function mostrarItens(compras) {
                 </g>
                 </svg>
                 <span>${item.nome}</span>
-                ${item.quantidade.length !== 0? `<span class="quantidade-span">${item.quantidade}</span>`: ''}
+                ${item.quantidade.length !== 0 ? `<span class="quantidade-span">${item.quantidade}</span>` : ''}
             </div>
         </div>`;
         listaContainer.insertAdjacentHTML('beforeend', htmlItem);
     });
 
+}
 
+export function mostrarContador(compras) {
+    const spanQuantidadeItens = document.querySelector('#quantidade-itens');
+    spanQuantidadeItens.textContent = `${compras.length === 1 ? '1 item' :  `${compras.length} itens`}`;
 }
 
 function alternarClasessModal() {
