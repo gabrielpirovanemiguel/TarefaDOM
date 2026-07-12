@@ -15,7 +15,7 @@ window.addEventListener('load', () => {
 
 botaoEditar.addEventListener('click', ativarModalAdicionar);
 conteudoLista.addEventListener('click', function (event) {
-    if (event.target.classList.contains('btn-cancelar-modal')) desativarModalAdicionar();
+    if (event.target.classList.contains('btn-cancelar-modal')) desativarModalAdicionar(compras);
 })
 
 conteudoLista.addEventListener('submit', (event) => {

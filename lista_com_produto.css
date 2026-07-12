@@ -28,6 +28,9 @@
     background-color: #496AEDE5;
     color: white;
     border-radius: 16px;
-    padding: 10px;
-
+    padding: 0 10px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -4,29 +4,33 @@ import {
 } from "./elementos_html.js";
 
 export function ativarModalAdicionar(event) {
-    alternarClasessModal().innerHTML = htmlModal;
+    const listaContainer = alternarClasessModal()
+    listaContainer.classList.remove('lista-itens');
+    listaContainer.innerHTML = htmlModal;
 }
 
-export function desativarModalAdicionar(event) {
-    alternarClasessModal().innerHTML = htmlListaVazia;
+export function desativarModalAdicionar(compras) {
+    const listaContainer = alternarClasessModal()
+    mostrarItens(compras);
 }
 
 export function adicionarProduto(compras) {
     const nomeProduto = document.querySelector('#nome-produto').value;
     const quantidadeProduto = document.querySelector('#quantidade-produto').value;
     compras.push({ 'nome': nomeProduto, 'quantidade': quantidadeProduto });
-    console.log(compras);
-    desativarModalAdicionar();
-    mostrarItens(compras);
+    desativarModalAdicionar(compras);
 }
 
 export function mostrarItens(compras) {
     const listaContainer = document.querySelector('.lista');
-    listaContainer.classList.add('lista-itens');
     if (compras.length === 0) {
+        listaContainer.classList.remove('lista-itens');
+        console.log('entrou');
         listaContainer.innerHTML = htmlListaVazia;
         return;
     }
+    listaContainer.innerHTML = '';
+    listaContainer.classList.add('lista-itens');
     compras.forEach(item => {
         const htmlItem = `                    
         <div class="produto-container">
@@ -37,7 +41,7 @@ export function mostrarItens(compras) {
                 </g>
                 </svg>
                 <span>${item.nome}</span>
-                <span class="quantidade-span">${item.quantidade}</span>
+                ${item.quantidade.length !== 0? `<span class="quantidade-span">${item.quantidade}</span>`: ''}
             </div>
         </div>`;
         listaContainer.insertAdjacentHTML('beforeend', htmlItem);
