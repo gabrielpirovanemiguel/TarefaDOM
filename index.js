@@ -1,6 +1,7 @@
 import  {ativarModalAdicionar,
         desativarModalAdicionar,
-        adicionarProduto
+        adicionarProduto,
+        mostrarItens
 } from "./funcoes.js";
 
 let botoesCancelar;
@@ -8,6 +9,9 @@ let compras = [];
 const botaoEditar = document.getElementById('btn-adicionar');
 const conteudoLista = document.querySelector('#conteudo-lista');
 
+window.addEventListener('load', () => {
+    mostrarItens(compras);
+});
 
 botaoEditar.addEventListener('click', ativarModalAdicionar);
 conteudoLista.addEventListener('click', function (event) {

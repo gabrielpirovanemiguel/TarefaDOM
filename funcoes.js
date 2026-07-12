@@ -23,6 +23,10 @@ export function adicionarProduto(compras) {
 export function mostrarItens(compras) {
     const listaContainer = document.querySelector('.lista');
     listaContainer.classList.add('lista-itens');
+    if (compras.length === 0) {
+        listaContainer.innerHTML = htmlListaVazia;
+        return;
+    }
     compras.forEach(item => {
         const htmlItem = `                    
         <div class="produto-container">
@@ -38,6 +42,8 @@ export function mostrarItens(compras) {
         </div>`;
         listaContainer.insertAdjacentHTML('beforeend', htmlItem);
     });
+
+
 }
 
 function alternarClasessModal() {
