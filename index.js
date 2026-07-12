@@ -13,7 +13,7 @@ const htmlModal = `<span class="topo-modal">
                         <button class="btn-cancelar-modal" type="button">Cancelar</button>
                         <input type="submit" value="Adicionar" id="btn-adicionar-modal">
                     </div>
-                </form
+                </form>
 `;
 
 const htmlListaVazia = `                    
@@ -27,6 +27,7 @@ const htmlListaVazia = `
 `;
 
 let botoesCancelar;
+let compras = [];
 
 function ativarModalAdicionar(event) {
     const listaContainer = document.querySelector('.lista');
@@ -48,6 +49,20 @@ const botaoEditar = document.getElementById('btn-adicionar');
 const conteudoLista = document.querySelector('#conteudo-lista');
 
 botaoEditar.addEventListener('click', ativarModalAdicionar);
-conteudoLista.addEventListener('click', function(event) {
+conteudoLista.addEventListener('click', function (event) {
     if (event.target.classList.contains('btn-cancelar-modal')) desativarModalAdicionar();
+})
+
+conteudoLista.addEventListener('submit', (event) => {
+    if (event.target.classList.contains('form-adicionar')) {
+        event.preventDefault();
+        let quantidadeProduto;
+        const nomeProduto = document.querySelector('#nome-produto').value;
+        const isQuantidade = document.querySelector('#quantidade-produto');
+        isQuantidade.value ? quantidadeProduto = isQuantidade.value : quantidadeProduto = 1;
+        compras.push({ 'nome': nomeProduto, 'quantidade': quantidadeProduto });
+        console.log(compras);
+        desativarModalAdicionar();
+    }
+
 })
