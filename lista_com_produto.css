@@ -1,0 +1,33 @@
+.lista-itens {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.produto-container {
+    background-color: #64AD36;
+    display: flex;
+    align-items: center;
+    justify-content: st;
+    border-radius: 16px;
+    width: 100%;
+}
+
+.produto {
+    display: flex;
+    font-size: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    padding: 25px 20px;
+}
+
+.quantidade-span {
+    background-color: #496AEDE5;
+    color: white;
+    border-radius: 16px;
+    padding: 10px;
+
+}
