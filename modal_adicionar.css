@@ -11,7 +11,7 @@
 .modal-adicionar {
     color: black;
     background-color: white;
-    height: 50vh;
+    height: 80;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -62,6 +62,12 @@
     margin-bottom: 40px;
     height: 6vh;
 }
+
+
+.form-adicionar input[type="text"] {
+    padding: 0 10px;
+}
+
 
 .btn-modal {
     display: flex;
