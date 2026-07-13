@@ -102,5 +102,5 @@ export const htmlModalEdicao = `
                         </div>
                     </div>
 
-                    <button class="btn-fechar-modal-editar">Concluir</button>
+                    <button class="btn-fechar-modal-editar" id="btn-concluir">Concluir</button>
 `
