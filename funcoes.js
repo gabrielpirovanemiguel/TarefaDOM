@@ -55,6 +55,8 @@ export function mostrarContador(compras) {
     spanQuantidadeItens.textContent = `${compras.length === 1 ? '1 item' :  `${compras.length} itens`}`;
 }
 
+
+
 function alternarClasessModal() {
     const listaContainer = document.querySelector('.lista');
     const conteudoLista = document.querySelector('#conteudo-lista');
