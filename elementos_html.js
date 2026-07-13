@@ -1,4 +1,4 @@
-export const htmlModal = `<span class="topo-modal">
+export const htmlModalAdicao = `<span class="topo-modal">
                     <h3>Adicionar item</h3>
                     <button class="btn-cancelar-modal">✕</button>
                 </span>

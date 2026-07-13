@@ -1,39 +1,33 @@
 import {
-    htmlModal,
+    htmlModalAdicao,
     htmlListaVazia,
     htmlModalEdicao
 } from "./elementos_html.js";
 
 export function ativarModalAdicionar(event) {
-    const listaContainer = alternarClasessModal()
+    const listaContainer = document.querySelector('.lista');
+    alternarClassesModalAdicionar(listaContainer);
     listaContainer.classList.remove('lista-itens');
-    listaContainer.innerHTML = htmlModal;
+    listaContainer.innerHTML = htmlModalAdicao;
 }
 
 export function desativarModalAdicionar(compras) {
-    const listaContainer = alternarClasessModal();
+    const listaContainer = document.querySelector('.lista');
+    alternarClassesModalAdicionar(listaContainer);
     mostrarItens(compras);
 }
 
-
-
 export function ativarModalEditar(compras) {
     const listaContainer = document.querySelector('.lista');
-    const conteudoLista = document.querySelector('#conteudo-lista');
+    alternarClassesModalEditar(listaContainer);
     listaContainer.classList.remove('lista-itens');
-    listaContainer.classList.add('lista-edicao');
-    conteudoLista.classList.add('overlay');
     listaContainer.innerHTML = htmlModalEdicao;
     mostrarListaEdicao(compras);
 }
 
-
-
 export function desativarModalEditar(compras) {
     const listaContainer = document.querySelector('.lista');
-    const conteudoLista = document.querySelector('#conteudo-lista');
-    listaContainer.classList.remove('lista-edicao');
-    conteudoLista.classList.remove('overlay');
+    alternarClassesModalEditar(listaContainer);
     mostrarItens(compras);
 }
 
@@ -45,8 +39,8 @@ export function adicionarProduto(compras) {
     mostrarContador(compras);
 }
 
-export function removerProduto(produto_pos, compras) {
-    compras.splice(produto_pos, 1);
+export function removerProduto(posicao_produto, compras) {
+    compras.splice(posicao_produto, 1);
     mostrarListaEdicao(compras);
 }
 
@@ -135,11 +129,15 @@ export function mostrarListaEdicao(compras) {
     })
 }
 
-function alternarClasessModal() {
-    const listaContainer = document.querySelector('.lista');
+function alternarClassesModalAdicionar(listaContainer) {
     const conteudoLista = document.querySelector('#conteudo-lista');
     listaContainer.classList.toggle('modal-adicionar');
     conteudoLista.classList.toggle('overlay');
-    return listaContainer;
+}
+
+function alternarClassesModalEditar(listaContainer) {
+    const conteudoLista = document.querySelector('#conteudo-lista');
+    listaContainer.classList.toggle('modal-edicao');
+    conteudoLista.classList.toggle('overlay');
 }
 
