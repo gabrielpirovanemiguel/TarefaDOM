@@ -19,11 +19,14 @@ window.addEventListener('load', () => {
 });
 
 botaoAdicionar.addEventListener('click', ativarModalAdicionar);
-botaoEditar.addEventListener('click', ativarModalEditar);
+botaoEditar.addEventListener('click', function() {
+    ativarModalEditar(compras);
+});
 conteudoLista.addEventListener('click', function (event) {
     if (event.target.classList.contains('btn-cancelar-modal')) {
         desativarModalAdicionar(compras);
-    } else if(event.target.classList.contains('btn-fechar-modal-editar')) {
+    }
+     else if(event.target.classList.contains('btn-fechar-modal-editar')) {
         desativarModalEditar(compras);
     }
 })
