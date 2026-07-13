@@ -50,5 +50,6 @@ conteudoLista.addEventListener('submit', (event) => {
     if (event.target.classList.contains('form-adicionar')) {
         event.preventDefault();
         adicionarProduto(compras);
+        ativarBotoes(botaoAdicionar, botaoEditar);
     }
 })

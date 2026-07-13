@@ -34,6 +34,12 @@ export function desativarModalEditar(compras) {
 export function adicionarProduto(compras) {
     const nomeProduto = document.querySelector('#nome-produto').value;
     const quantidadeProduto = document.querySelector('#quantidade-produto').value;
+    const isNomeValido = validarNome(nomeProduto, compras);
+    console.log(isNomeValido);
+    if (!isNomeValido) {
+        alert(`Entrada inválida, pois já existe um produto com o nome "${nomeProduto}".`);
+        return;
+    }
     compras.push({ 'nome': nomeProduto, 'quantidade': quantidadeProduto });
     desativarModalAdicionar(compras);
     mostrarContador(compras);
@@ -137,6 +143,15 @@ export function ativarBotoes(btnAdicionar, btnEditar) {
 export function desativarBotoes(btnAdicionar, btnEditar) {
     btnAdicionar.disabled = true;
     btnEditar.disabled = true ;
+}
+
+function validarNome(nome, compras) {
+    nome = (nome.toLowerCase()).replace(' ', '');
+    for(let i = 0; i < compras.length; i ++) {
+        const nomeComparador = (compras[i].nome.toLowerCase()).replace(' ', '');
+        if(nome === nomeComparador) return false;
+    }
+    return true;
 }
 
 function alternarClassesModalAdicionar(listaContainer) {
