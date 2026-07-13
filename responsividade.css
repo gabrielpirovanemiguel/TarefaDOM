@@ -1,0 +1,28 @@
+@media (max-width: 430px) {
+    .header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .header h1 {
+        text-align: center;
+    }
+
+    .botoes {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .lista h2 {
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .lista h3 {
+        font-size: 13.6px;
+    }
+
+    .modal-edicao {
+        width: 60vw;
+    }
+}
