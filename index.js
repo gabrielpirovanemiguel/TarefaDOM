@@ -33,14 +33,16 @@ botaoEditar.addEventListener('click', function() {
 
 conteudoLista.addEventListener('click', function (event) {
     if (event.target.classList.contains('btn-cancelar-modal')) {
-        desativarModalAdicionar(compras);
         ativarBotoes(botaoAdicionar, botaoEditar);
+        desativarModalAdicionar(compras);
+        
     }
      else if(event.target.classList.contains('btn-fechar-modal-editar')) {
-        desativarModalEditar(compras);
         ativarBotoes(botaoAdicionar, botaoEditar);
+        desativarModalEditar(compras);
     } else if (event.target.closest('#btn-deletar')) {
         const btn = event.target.closest('#btn-deletar');
+        ativarBotoes(botaoAdicionar, botaoEditar);
         removerProduto(btn.value, compras);
         mostrarContador(compras);
         }
