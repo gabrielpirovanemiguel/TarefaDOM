@@ -129,6 +129,16 @@ export function mostrarListaEdicao(compras) {
     })
 }
 
+export function ativarBotoes(btnAdicionar, btnEditar) {
+    btnAdicionar.disabled = false;
+    btnEditar.disabled = false ;
+}
+
+export function desativarBotoes(btnAdicionar, btnEditar) {
+    btnAdicionar.disabled = true;
+    btnEditar.disabled = true ;
+}
+
 function alternarClassesModalAdicionar(listaContainer) {
     const conteudoLista = document.querySelector('#conteudo-lista');
     listaContainer.classList.toggle('modal-adicionar');
@@ -143,9 +153,10 @@ function alternarClassesModalEditar(listaContainer) {
     alternarPaddingHeader();
 }
 
+
+
 function alternarPaddingHeader() {
     const header = document.querySelector('.header');
     header.classList.toggle('header-modal-ativo');
 }
-
 

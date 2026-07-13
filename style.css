@@ -107,7 +107,8 @@ main {
     border-radius: 16px;
 }
 
-#btn-editar:disabled {
+#btn-editar:disabled, #btn-adicionar:disabled {
     cursor: not-allowed;
     opacity: 0.8;
+    transform: scale(1);
 }

@@ -60,10 +60,6 @@
     font-size: 15px;
 }
 
-#btn-editar:disabled {
-    transform: scale(1);
-}
-
 button, #btn-adicionar-modal {
     animation: ease-in-out(0.9);
 }

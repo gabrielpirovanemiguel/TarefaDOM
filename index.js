@@ -2,6 +2,8 @@ import  {ativarModalAdicionar,
         desativarModalAdicionar,
         ativarModalEditar,
         desativarModalEditar,
+        ativarBotoes,
+        desativarBotoes,
         adicionarProduto,
         removerProduto,
         mostrarListaEdicao,
@@ -20,17 +22,23 @@ window.addEventListener('load', () => {
     mostrarContador(compras);
 });
 
-botaoAdicionar.addEventListener('click', ativarModalAdicionar);
+botaoAdicionar.addEventListener('click', function() {
+    ativarModalAdicionar();
+    desativarBotoes(botaoAdicionar, botaoEditar);
+});
 botaoEditar.addEventListener('click', function() {
     ativarModalEditar(compras);
+    desativarBotoes(botaoAdicionar, botaoEditar);
 });
 
 conteudoLista.addEventListener('click', function (event) {
     if (event.target.classList.contains('btn-cancelar-modal')) {
         desativarModalAdicionar(compras);
+        ativarBotoes(botaoAdicionar, botaoEditar);
     }
      else if(event.target.classList.contains('btn-fechar-modal-editar')) {
         desativarModalEditar(compras);
+        ativarBotoes(botaoAdicionar, botaoEditar);
     } else if (event.target.closest('#btn-deletar')) {
         const btn = event.target.closest('#btn-deletar');
         removerProduto(btn.value, compras);
