@@ -1,6 +1,7 @@
 import {
     htmlModal,
-    htmlListaVazia
+    htmlListaVazia,
+    htmlModalEdicao
 } from "./elementos_html.js";
 
 export function ativarModalAdicionar(event) {
@@ -10,9 +11,26 @@ export function ativarModalAdicionar(event) {
 }
 
 export function desativarModalAdicionar(compras) {
-    const listaContainer = alternarClasessModal()
+    const listaContainer = alternarClasessModal();
     mostrarItens(compras);
 }
+
+export function ativarModalEditar(event) {
+    const listaContainer = document.querySelector('.lista');
+    const conteudoLista = document.querySelector('#conteudo-lista');
+    listaContainer.classList.add('lista-edicao');
+    conteudoLista.classList.add('overlay');
+    listaContainer.innerHTML = htmlModalEdicao;
+}
+
+export function desativarModalEditar(compras) {
+    const listaContainer = document.querySelector('.lista');
+    const conteudoLista = document.querySelector('#conteudo-lista');
+    listaContainer.classList.remove('lista-edicao');
+    conteudoLista.classList.remove('overlay');
+    mostrarItens(compras);
+}
+
 
 export function adicionarProduto(compras) {
     const nomeProduto = document.querySelector('#nome-produto').value;
@@ -52,10 +70,8 @@ export function mostrarItens(compras) {
 
 export function mostrarContador(compras) {
     const spanQuantidadeItens = document.querySelector('#quantidade-itens');
-    spanQuantidadeItens.textContent = `${compras.length === 1 ? '1 item' :  `${compras.length} itens`}`;
+    spanQuantidadeItens.textContent = `${compras.length === 1 ? '1 item' : `${compras.length} itens`}`;
 }
-
-
 
 function alternarClasessModal() {
     const listaContainer = document.querySelector('.lista');

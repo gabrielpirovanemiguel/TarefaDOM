@@ -1,5 +1,7 @@
 import  {ativarModalAdicionar,
         desativarModalAdicionar,
+        ativarModalEditar,
+        desativarModalEditar,
         adicionarProduto,
         mostrarItens,
         mostrarContador
@@ -7,17 +9,23 @@ import  {ativarModalAdicionar,
 
 let botoesCancelar;
 let compras = [];
-const botaoEditar = document.getElementById('btn-adicionar');
+const botaoAdicionar = document.getElementById('btn-adicionar');
+const botaoEditar = document.getElementById('btn-editar');
 const conteudoLista = document.querySelector('#conteudo-lista');
 
-// window.addEventListener('load', () => {
-//     mostrarItens(compras);
-//     mostrarContador(compras);
-// });
+window.addEventListener('load', () => {
+    mostrarItens(compras);
+    mostrarContador(compras);
+});
 
-botaoEditar.addEventListener('click', ativarModalAdicionar);
+botaoAdicionar.addEventListener('click', ativarModalAdicionar);
+botaoEditar.addEventListener('click', ativarModalEditar);
 conteudoLista.addEventListener('click', function (event) {
-    if (event.target.classList.contains('btn-cancelar-modal')) desativarModalAdicionar(compras);
+    if (event.target.classList.contains('btn-cancelar-modal')) {
+        desativarModalAdicionar(compras);
+    } else if(event.target.classList.contains('btn-fechar-modal-editar')) {
+        desativarModalEditar(compras);
+    }
 })
 
 conteudoLista.addEventListener('submit', (event) => {
