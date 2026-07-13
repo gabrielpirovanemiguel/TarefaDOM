@@ -10,10 +10,10 @@ let compras = [];
 const botaoEditar = document.getElementById('btn-adicionar');
 const conteudoLista = document.querySelector('#conteudo-lista');
 
-window.addEventListener('load', () => {
-    mostrarItens(compras);
-    mostrarContador(compras);
-});
+// window.addEventListener('load', () => {
+//     mostrarItens(compras);
+//     mostrarContador(compras);
+// });
 
 botaoEditar.addEventListener('click', ativarModalAdicionar);
 conteudoLista.addEventListener('click', function (event) {
