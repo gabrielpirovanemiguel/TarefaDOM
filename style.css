@@ -102,3 +102,8 @@ main {
     gap: 15px;
     border-radius: 16px;
 }
+
+#btn-editar:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}

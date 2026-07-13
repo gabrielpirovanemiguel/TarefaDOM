@@ -54,10 +54,13 @@
 }
 
 .form-adicionar input {
+    font-family: 'outfit';
+    font-size: 15px;
+    border: 0.05rem solid  #9999b05f ;
+    border-radius: 16px;
     width: 30vw;
     margin-bottom: 40px;
     height: 6vh;
-    border: none;
 }
 
 .btn-modal {
@@ -88,4 +91,5 @@
     font-size: 16px;
     font-family: 'outfit';
     color: #C0C0D0;
+    padding: 0 5px;
 }
