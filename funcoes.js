@@ -133,11 +133,19 @@ function alternarClassesModalAdicionar(listaContainer) {
     const conteudoLista = document.querySelector('#conteudo-lista');
     listaContainer.classList.toggle('modal-adicionar');
     conteudoLista.classList.toggle('overlay');
+    alternarPaddingHeader();
 }
 
 function alternarClassesModalEditar(listaContainer) {
     const conteudoLista = document.querySelector('#conteudo-lista');
     listaContainer.classList.toggle('modal-edicao');
     conteudoLista.classList.toggle('overlay');
+    alternarPaddingHeader();
 }
+
+function alternarPaddingHeader() {
+    const header = document.querySelector('.header');
+    header.classList.toggle('header-modal-ativo');
+}
+
 
